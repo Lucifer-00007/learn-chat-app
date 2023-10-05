@@ -31,8 +31,12 @@ const botName = "ChatCord Bot";
 
 // Asynchronous function for setting up Redis as the Socket.io adapter
 (async () => {
-  // Create a Redis Pub/Sub client
-  pubClient = createClient({ url: "redis://127.0.0.1:6379" });
+  // Create a Local Redis Pub/Sub client
+  // pubClient = createClient({ url: "redis://127.0.0.1:6379" });
+  
+  // Create a Online Redis Pub/Sub client
+  pubClient = createClient({ url: "redis://red-ckf8la6afg7c738pmh90:6379" });
+  // pubClient = createClient({ url: "redis://red-ckf8la6afg7c738pmh90:ShFqrKvhAvHTd0un1pd6sXfM2qgzHtNG@singapore-redis.render.com:6379" });
   await pubClient.connect();
 
   // Duplicate the client for subscribing
